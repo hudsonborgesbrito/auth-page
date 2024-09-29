@@ -1,3 +1,9 @@
 export default function Page() {
-  return <h1>Hello Julka!</h1>
+  return (
+    <div>
+    <h2>Hello Julka!</h2>
+    <p>This is wholesome.</p>
+    </div>
+
+  )
 }

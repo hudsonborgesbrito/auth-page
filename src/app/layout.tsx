@@ -1,3 +1,6 @@
+import Counter from "@/components/Counter"
+import Link from "next/link"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -5,7 +8,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <header className="site-header">
+          <h3>Our header</h3>
+        </header>
+        {children}
+        <footer className="site-footer">
+          <p>All rights reserved</p>
+          <nav>
+            <ul>
+              <li><Link href={"/"}>Home</Link></li>
+              <li><Link href={"/about"}>About us</Link></li>
+              <li><Link href={"/contact"}>Contact</Link></li>
+            </ul>
+          </nav>
+          <Counter />
+        </footer>
+      </body>
     </html>
   )
 }
