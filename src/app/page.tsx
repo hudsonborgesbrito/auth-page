@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import SignIn from "@/components/sign-in"
 import Link from "next/link"
 
 async function getPets(){
@@ -17,6 +18,8 @@ export default async function Page() {
           return <li key={index}><Link href={"/pet/" + pet.name.toLowerCase()}>{pet.name}</Link></li>
         })}
       </ul>
+      <br/>
+      <SignIn />
     </div>
   )
 }
