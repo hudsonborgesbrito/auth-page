@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 async function getPet(name: string){
     const allPetsPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json")

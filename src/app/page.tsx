@@ -1,25 +1,23 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import SignIn from "@/components/sign-in"
-import Link from "next/link"
+import { auth, signOut } from "@/auth";
+import { notFound } from "next/navigation";
 
-async function getPets(){
-  const petsPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json")
-  const pets = await petsPromise.json()
-  return pets
-}
+const HomePage = async () => {
+ const session = await auth();
+ if (!session || !session.user || !session.user.name) return notFound();
+ 
+ return (
+   <main>
+     <h1>Hello {session.user.name}</h1>
 
-export default async function Page() {
-  const pets = await getPets()
-  return (
-    <div>
-      <h3>List of Pets</h3>
-      <ul>
-        {pets.map((pet: any, index: number) => {
-          return <li key={index}><Link href={"/pet/" + pet.name.toLowerCase()}>{pet.name}</Link></li>
-        })}
-      </ul>
-      <br/>
-      <SignIn />
-    </div>
-  )
-}
+     <form
+       action={async () => {
+         "use server";
+         await signOut();
+       }}
+     >
+       <button type="submit">Log Out</button>
+     </form>
+   </main>
+ );
+};
+export default HomePage;
