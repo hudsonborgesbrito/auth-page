@@ -1,13 +1,16 @@
 import { auth, signOut } from "@/auth";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 const HomePage = async () => {
  const session = await auth();
  if (!session || !session.user || !session.user.name) return notFound();
- 
+
  return (
    <main>
-     <h1>Hello {session.user.name}</h1>
+    <div>
+      <h4>Hello {session.user.name}</h4>
+    </div>
 
      <form
        action={async () => {

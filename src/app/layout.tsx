@@ -20,6 +20,7 @@ export default function RootLayout({
               <li><Link href={"/"}>Home</Link></li>
               <li><Link href={"/about"}>About us</Link></li>
               <li><Link href={"/contact"}>Contact</Link></li>
+              <li><Link href={"/pet"}>Pets</Link></li>
             </ul>
           </nav>
         </footer>
