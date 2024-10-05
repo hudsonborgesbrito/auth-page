@@ -11,7 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header className="site-header">
-          <h3>Our header</h3>
+          <h3>NextJS learning playground</h3>
         </header>
         {children}
         <footer className="site-footer">
@@ -23,7 +23,6 @@ export default function RootLayout({
               <li><Link href={"/contact"}>Contact</Link></li>
             </ul>
           </nav>
-          <Counter />
         </footer>
       </body>
     </html>
