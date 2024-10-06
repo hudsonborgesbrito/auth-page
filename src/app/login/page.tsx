@@ -1,15 +1,12 @@
-import { signIn } from "@/auth";
+import SignInFacebook from "@/components/LoginFacebook";
+import SignInGoogle from "@/components/LoginGoogle";
 
 const LoginPage = () => {
  return (
-   <form
-     action={async () => {
-       "use server";
-       await signIn("google");
-     }}
-   >
-     <button type="submit">Login with Google</button>
-   </form>
+   <div>
+    <p><SignInGoogle /></p>
+    <p><SignInFacebook /></p>
+   </div>
    );
 };
 
