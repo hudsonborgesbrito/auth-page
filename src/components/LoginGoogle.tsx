@@ -2,7 +2,7 @@ import { signIn } from "@/auth"
  
 export default function SignInGoogle() {
   return (
-    <form
+    <form name="googleLogin"
       action={async () => {
         "use server"
         await signIn("google")

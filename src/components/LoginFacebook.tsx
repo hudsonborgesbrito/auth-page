@@ -2,7 +2,7 @@ import { signIn } from "@/auth"
  
 export default function SignInFacebook() {
   return (
-    <form
+    <form name="fbLogin"
       action={async () => {
         "use server"
         await signIn("facebook")
